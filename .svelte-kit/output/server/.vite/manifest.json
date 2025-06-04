@@ -16,8 +16,15 @@
     "file": "chunks/Button.js",
     "name": "Button",
     "imports": [
-      "_exports.js",
-      "_index.js"
+      "_index.js",
+      "_Button.svelte_svelte_type_style_lang.js"
+    ]
+  },
+  "_Button.svelte_svelte_type_style_lang.js": {
+    "file": "chunks/Button.svelte_svelte_type_style_lang.js",
+    "name": "Button.svelte_svelte_type_style_lang",
+    "imports": [
+      "_exports.js"
     ],
     "css": [
       "_app/immutable/assets/Button.Bxultubt.css"
@@ -89,6 +96,7 @@
     "imports": [
       "_index.js",
       "_client.js",
+      "_Button.svelte_svelte_type_style_lang.js",
       "_Button.js"
     ],
     "css": [
@@ -103,6 +111,7 @@
     "imports": [
       "_index.js",
       "_client.js",
+      "_Button.svelte_svelte_type_style_lang.js",
       "_Button.js"
     ],
     "css": [
@@ -116,11 +125,11 @@
     "isEntry": true,
     "imports": [
       "_index.js",
-      "_client.js"
+      "_client.js",
+      "_Button.svelte_svelte_type_style_lang.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.C_qElwx-.css",
-      "_app/immutable/assets/Button.Bxultubt.css"
+      "_app/immutable/assets/_page.C_qElwx-.css"
     ]
   },
   "src/routes/select-type/+page.svelte": {
@@ -131,6 +140,7 @@
     "imports": [
       "_index.js",
       "_client.js",
+      "_Button.svelte_svelte_type_style_lang.js",
       "_Button.js"
     ],
     "css": [

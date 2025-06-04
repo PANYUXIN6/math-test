@@ -2,7 +2,7 @@
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
     import { base } from '$app/paths';
-    import { gameModeStore, questionsStore, scoreStore } from '$lib/stores.js';
+    import { gameModeStore, questionTypeStore, questionsStore, scoreStore } from '$lib/stores.js';
     import { gradeQuestions } from '$lib/grading.js';
     import Button from '$lib/components/Button.svelte';
     
@@ -13,8 +13,14 @@
     let gradeComplete = false;
     
     onMount(() => {
+        console.log('Results page mounted'); // 调试信息
+        
         const unsubscribeQuestions = questionsStore.subscribe(questions => {
+            console.log('Questions in results page:', questions.length); // 调试信息
+            
             if (questions.length > 0) {
+                console.log('Processing results for', questions.length, 'questions'); // 调试信息
+                
                 // 进行判题
                 const result = gradeQuestions(questions);
                 gradedQuestions = result.questions;
@@ -26,9 +32,14 @@
                 questionsStore.set(result.questions);
                 scoreStore.set(score);
                 gradeComplete = true;
+                
+                console.log('Grading complete. Score:', score); // 调试信息
             } else {
-                // 没有题目数据，返回首页
-                goto(`${base}/`);
+                console.warn('No questions found, redirecting to home'); // 调试信息
+                // 给一个小延迟，确保页面已经完全加载
+                setTimeout(() => {
+                    goto(`${base}/`);
+                }, 100);
             }
         });
         
@@ -38,10 +49,11 @@
     });
     
     function restartQuiz() {
-        // 重置所有状态
-        gameModeStore.set('initial');
-        questionsStore.set([]);
-        scoreStore.set(0);
+        // 重置所有状态并清除本地存储
+        gameModeStore.clear();
+        questionTypeStore.clear();
+        questionsStore.clear();
+        scoreStore.clear();
         goto(`${base}/`);
     }
     

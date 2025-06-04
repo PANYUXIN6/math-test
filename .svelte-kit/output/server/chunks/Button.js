@@ -1,8 +1,5 @@
-import { w as writable } from "./exports.js";
 import { w as fallback, x as attr_class, y as attr, C as slot, v as bind_props, B as stringify } from "./index.js";
-/* empty css                                     */
-const gameModeStore = writable("initial");
-const questionsStore = writable([]);
+import "./Button.svelte_svelte_type_style_lang.js";
 function Button($$payload, $$props) {
   let onClick = fallback($$props["onClick"], () => {
   });
@@ -16,7 +13,5 @@ function Button($$payload, $$props) {
   bind_props($$props, { onClick, type, size, disabled, fullWidth });
 }
 export {
-  Button as B,
-  gameModeStore as g,
-  questionsStore as q
+  Button as B
 };

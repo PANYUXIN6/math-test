@@ -1,6 +1,7 @@
 import { u as head, n as pop, p as push } from "../../chunks/index.js";
 import { g as goto } from "../../chunks/client.js";
-import { B as Button, g as gameModeStore } from "../../chunks/Button.js";
+import { g as gameModeStore } from "../../chunks/Button.svelte_svelte_type_style_lang.js";
+import { B as Button } from "../../chunks/Button.js";
 function _page($$payload, $$props) {
   push();
   function handleStart() {

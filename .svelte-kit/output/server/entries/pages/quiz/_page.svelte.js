@@ -1,6 +1,7 @@
 import { t as escape_html, v as bind_props, n as pop, p as push, w as fallback, x as attr_class, y as attr, u as head, z as attr_style, A as ensure_array_like, B as stringify } from "../../../chunks/index.js";
 import { g as goto } from "../../../chunks/client.js";
-import { B as Button, q as questionsStore, g as gameModeStore } from "../../../chunks/Button.js";
+import { q as questionsStore, g as gameModeStore } from "../../../chunks/Button.svelte_svelte_type_style_lang.js";
+import { B as Button } from "../../../chunks/Button.js";
 function areAllQuestionsAnswered(questions) {
   return questions.every(
     (question) => question.userAnswer !== null && question.userAnswer !== void 0 && question.userAnswer !== ""

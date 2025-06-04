@@ -1,7 +1,6 @@
 import { u as head, n as pop, p as push } from "../../../chunks/index.js";
 import "../../../chunks/client.js";
-import "clsx";
-/* empty css                                                   */
+import "../../../chunks/Button.svelte_svelte_type_style_lang.js";
 function _page($$payload, $$props) {
   push();
   head($$payload, ($$payload2) => {
