@@ -10,46 +10,15 @@ return {
 	assets: new Set(["favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {start:"_app/immutable/entry/start.BAJ9TK8S.js",app:"_app/immutable/entry/app.bs5yfS6f.js",imports:["_app/immutable/entry/start.BAJ9TK8S.js","_app/immutable/chunks/pmTClY9S.js","_app/immutable/chunks/4Lpfm1mz.js","_app/immutable/chunks/wu8WGWAQ.js","_app/immutable/entry/app.bs5yfS6f.js","_app/immutable/chunks/4Lpfm1mz.js","_app/immutable/chunks/BnJy6Fgy.js","_app/immutable/chunks/CP3jBiu0.js","_app/immutable/chunks/Cp7w3v0t.js","_app/immutable/chunks/wu8WGWAQ.js","_app/immutable/chunks/GIOW0cxA.js","_app/immutable/chunks/D6qk6l_c.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.BUHKBDhR.js",app:"_app/immutable/entry/app.D1b8a45P.js",imports:["_app/immutable/entry/start.BUHKBDhR.js","_app/immutable/chunks/DphQYWWY.js","_app/immutable/chunks/CzhO23HD.js","_app/immutable/chunks/lDDLI7_-.js","_app/immutable/entry/app.D1b8a45P.js","_app/immutable/chunks/CzhO23HD.js","_app/immutable/chunks/Bcguu_Yt.js","_app/immutable/chunks/OjjX_Doe.js","_app/immutable/chunks/DwsMzhH_.js","_app/immutable/chunks/lDDLI7_-.js","_app/immutable/chunks/BIoakc-c.js","_app/immutable/chunks/BmfPoX4y.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
-			__memo(() => import('./nodes/1.js')),
-			__memo(() => import('./nodes/2.js')),
-			__memo(() => import('./nodes/3.js')),
-			__memo(() => import('./nodes/4.js')),
-			__memo(() => import('./nodes/5.js'))
+			__memo(() => import('./nodes/1.js'))
 		],
 		routes: [
-			{
-				id: "/",
-				pattern: /^\/$/,
-				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 2 },
-				endpoint: null
-			},
-			{
-				id: "/quiz",
-				pattern: /^\/quiz\/?$/,
-				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 3 },
-				endpoint: null
-			},
-			{
-				id: "/results",
-				pattern: /^\/results\/?$/,
-				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 4 },
-				endpoint: null
-			},
-			{
-				id: "/select-type",
-				pattern: /^\/select-type\/?$/,
-				params: [],
-				page: { layouts: [0,], errors: [1,], leaf: 5 },
-				endpoint: null
-			}
+			
 		],
-		prerendered_routes: new Set([]),
+		prerendered_routes: new Set(["/","/quiz","/results","/select-type"]),
 		matchers: async () => {
 			
 			return {  };

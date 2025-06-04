@@ -8,7 +8,7 @@ export default {
       // these options are set automatically — see below
       pages: 'build',
       assets: 'build',
-      fallback: undefined,
+      fallback: 'index.html', // SPA模式，设置fallback页面
       precompress: false,
       strict: true,
     }),
