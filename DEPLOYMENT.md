@@ -64,6 +64,17 @@ const config = {
 };
 ```
 
+### wrangler.jsonc 配置文件
+```json
+{
+  "name": "math-test",
+  "compatibility_date": "2025-06-04",
+  "assets": {
+    "directory": "./.svelte-kit/cloudflare"
+  }
+}
+```
+
 ### 项目结构说明
 SvelteKit的Cloudflare适配器会自动生成所需的文件结构：
 - `.svelte-kit/cloudflare/` - 包含部署所需的所有文件
@@ -88,6 +99,9 @@ A: Cloudflare Pages会自动处理Worker名称，如果在控制台部署则无�
 A: **这是最常见的问题！** 在Cloudflare Pages控制台中，**不要设置 Deploy command 字段**，或者将其清空。Cloudflare Pages会自动处理部署。
 
 **备选方案**：如果必须设置Deploy command，可以使用：`node deploy.js`
+
+### Q: 缺少入口点或资源目录
+A: 确保项目根目录有 `wrangler.jsonc` 配置文件，指定正确的资源目录为 `.svelte-kit/cloudflare`。
 
 ## 正确的Cloudflare Pages设置
 
