@@ -13,7 +13,7 @@
    - **Framework preset**: `SvelteKit`
    - **Build command**: `npm run build`
    - **Build output directory**: `.svelte-kit/cloudflare`
-   - **Node.js version**: `18` 或 `20`
+   - **Node.js version**: `20` 或更高（推荐 `20.x`）
    - **Environment variables**: 无需设置
 
 ### 3. 高级设置（如果需要）
