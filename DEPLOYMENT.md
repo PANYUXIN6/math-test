@@ -1,5 +1,11 @@
 # Cloudflare Pages 部署指南
 
+## ⚠️ 重要说明
+
+**如果您在Cloudflare Pages控制台遇到部署失败，请确保：**
+1. **不要设置自定义部署命令** - 删除或清空 "Deploy command" 字段
+2. 只使用标准的构建配置
+
 ## 方式1: 通过Cloudflare Pages控制台部署（推荐）
 
 ### 1. 准备工作
@@ -15,6 +21,7 @@
    - **Build output directory**: `.svelte-kit/cloudflare`
    - **Node.js version**: `20` 或更高（推荐 `20.x`）
    - **Environment variables**: 无需设置
+   - **⚠️ Deploy command**: **留空或删除此字段**
 
 ### 3. 高级设置（如果需要）
 在 "Environment variables" 中可以设置环境变量。
@@ -76,6 +83,22 @@ A: 这是旧版本适配器的问题，确保使用最新的 `@sveltejs/adapter-
 
 ### Q: Worker名称不匹配
 A: Cloudflare Pages会自动处理Worker名称，如果在控制台部署则无需担心此警告。
+
+### Q: 部署命令 `npx wrangler deploy` 失败
+A: **这是最常见的问题！** 在Cloudflare Pages控制台中，**不要设置 Deploy command 字段**，或者将其清空。Cloudflare Pages会自动处理部署。
+
+**备选方案**：如果必须设置Deploy command，可以使用：`node deploy.js`
+
+## 正确的Cloudflare Pages设置
+
+```
+Project name: math-test
+Framework preset: SvelteKit
+Build command: npm run build
+Build output directory: .svelte-kit/cloudflare
+Deploy command: [留空]
+Node.js version: 20.x
+```
 
 ## 验证部署
 
