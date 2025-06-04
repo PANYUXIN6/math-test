@@ -1,5 +1,6 @@
 <script>
     import { goto } from '$app/navigation';
+    import { base } from '$app/paths';
     import { gameModeStore, questionTypeStore, questionsStore } from '$lib/stores.js';
     import { generateQuestions } from '$lib/questionGenerator.js';
     import Button from '$lib/components/Button.svelte';
@@ -13,12 +14,12 @@
         
         // 更新游戏状态并导航到答题页面
         gameModeStore.set('quiz');
-        goto('/quiz');
+        goto(`${base}/quiz`);
     }
     
     function goBack() {
         gameModeStore.set('initial');
-        goto('/');
+        goto(`${base}/`);
     }
 </script>
 

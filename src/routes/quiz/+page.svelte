@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
+    import { base } from '$app/paths';
     import { gameModeStore, questionsStore, questionTypeStore } from '$lib/stores.js';
     import { areAllQuestionsAnswered, getUnansweredCount } from '$lib/grading.js';
     import QuestionDisplay from '$lib/components/QuestionDisplay.svelte';
@@ -17,7 +18,7 @@
         const unsubscribeQuestions = questionsStore.subscribe(value => {
             questions = value;
             if (questions.length === 0) {
-                goto('/');
+                goto(`${base}/`);
             }
         });
         
@@ -71,11 +72,11 @@
     
     function submitForGrading() {
         gameModeStore.set('results');
-        goto('/results');
+        goto(`${base}/results`);
     }
     
     function goBack() {
-        goto('/select-type');
+        goto(`${base}/select-type`);
     }
     
     $: currentQuestion = questions[currentQuestionIndex];

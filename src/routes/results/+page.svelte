@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
+    import { base } from '$app/paths';
     import { gameModeStore, questionsStore, scoreStore } from '$lib/stores.js';
     import { gradeQuestions } from '$lib/grading.js';
     import Button from '$lib/components/Button.svelte';
@@ -27,7 +28,7 @@
                 gradeComplete = true;
             } else {
                 // 没有题目数据，返回首页
-                goto('/');
+                goto(`${base}/`);
             }
         });
         
@@ -41,7 +42,7 @@
         gameModeStore.set('initial');
         questionsStore.set([]);
         scoreStore.set(0);
-        goto('/');
+        goto(`${base}/`);
     }
     
     function getScoreColor(score) {

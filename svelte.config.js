@@ -1,5 +1,7 @@
 import adapter from '@sveltejs/adapter-static'; // 静态适配器
 
+const dev = process.argv.includes('dev');
+
 /** @type {import('@sveltejs/kit').Config} */
 export default {
   kit: {
@@ -12,5 +14,9 @@ export default {
       precompress: false,
       strict: true,
     }),
+    // GitHub Pages部署路径配置
+    paths: {
+      base: dev ? '' : process.env.BASE_PATH || '',
+    },
   },
 };

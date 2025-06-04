@@ -1,11 +1,12 @@
 <script>
     import { goto } from '$app/navigation';
+    import { base } from '$app/paths';
     import { gameModeStore } from '$lib/stores.js';
     import Button from '$lib/components/Button.svelte';
     
     function handleStart() {
         gameModeStore.set('typeSelection');
-        goto('/select-type');
+        goto(`${base}/select-type`);
     }
 </script>
 
