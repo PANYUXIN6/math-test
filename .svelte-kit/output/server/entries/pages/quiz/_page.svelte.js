@@ -38,7 +38,7 @@ function FillInBlankInput($$payload, $$props) {
   if (question.userAnswer !== null && question.userAnswer !== void 0) {
     inputValue = question.userAnswer.toString();
   }
-  $$payload.out += `<div class="fill-input-container svelte-5ewcp3"><div class="input-wrapper svelte-5ewcp3"><input type="text"${attr_class("answer-input svelte-5ewcp3", void 0, { "disabled": disabled })}${attr("value", inputValue)}${attr("disabled", disabled, true)} placeholder="请输入答案" maxlength="3" autocomplete="off"/></div> <div class="input-hint svelte-5ewcp3"><span class="hint-text svelte-5ewcp3">💡 只能输入数字</span></div></div>`;
+  $$payload.out += `<div class="fill-input-container svelte-zj8mt4"><div class="input-wrapper svelte-zj8mt4"><input type="text"${attr_class("answer-input svelte-zj8mt4", void 0, { "disabled": disabled })}${attr("value", inputValue)}${attr("disabled", disabled, true)} placeholder="请输入答案" maxlength="3" autocomplete="off"/></div> <div class="input-hint svelte-zj8mt4"><span class="hint-text svelte-zj8mt4">💡 只能输入数字</span></div></div>`;
   bind_props($$props, { question, disabled, onAnswerChange });
   pop();
 }
