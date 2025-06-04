@@ -12,8 +12,9 @@
 4. 配置构建设置：
    - **Framework preset**: `SvelteKit`
    - **Build command**: `npm run build`
-   - **Build output directory**: `.svelte-kit/output/client`
+   - **Build output directory**: `.svelte-kit/cloudflare`
    - **Node.js version**: `18` 或 `20`
+   - **Environment variables**: 无需设置
 
 ### 3. 高级设置（如果需要）
 在 "Environment variables" 中可以设置环境变量。
@@ -30,9 +31,10 @@ npm install -g wrangler
 wrangler login
 ```
 
-### 3. 部署到Cloudflare Pages
+### 3. 构建并部署到Cloudflare Pages
 ```bash
-wrangler pages deploy .svelte-kit/output/client --project-name=test-app
+npm run build
+wrangler pages deploy .svelte-kit/cloudflare --project-name=math-test
 ```
 
 ## 项目配置说明
@@ -55,20 +57,11 @@ const config = {
 };
 ```
 
-### wrangler.toml
-```toml
-name = "test-app"
-compatibility_date = "2024-11-18"
-main = ".svelte-kit/output/server/index.js"
-assets = { directory = ".svelte-kit/output/client", binding = "ASSETS" }
-
-[build]
-command = "npm run build"
-
-[[routes]]
-pattern = "/*"
-custom_domain = false
-```
+### 项目结构说明
+SvelteKit的Cloudflare适配器会自动生成所需的文件结构：
+- `.svelte-kit/cloudflare/` - 包含部署所需的所有文件
+- `_worker.js` - Cloudflare Workers代码
+- 静态文件会被正确放置
 
 ## 常见问题
 
@@ -76,10 +69,13 @@ custom_domain = false
 A: 确保使用了 `@sveltejs/adapter-cloudflare` 适配器，而不是 `adapter-auto`。
 
 ### Q: 构建成功但页面无法访问
-A: 检查构建输出目录是否设置为 `.svelte-kit/output/client`。
+A: 检查构建输出目录是否设置为 `.svelte-kit/cloudflare`。
 
-### Q: 动态路由不工作
-A: 确保在 `wrangler.toml` 中设置了正确的路由配置。
+### Q: 部署时提示找不到 /index.js
+A: 这是旧版本适配器的问题，确保使用最新的 `@sveltejs/adapter-cloudflare` 且不要自定义路由配置。
+
+### Q: Worker名称不匹配
+A: Cloudflare Pages会自动处理Worker名称，如果在控制台部署则无需担心此警告。
 
 ## 验证部署
 

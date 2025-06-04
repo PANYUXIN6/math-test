@@ -4,13 +4,7 @@ import adapter from '@sveltejs/adapter-cloudflare';
 const config = {
 	kit: {
 		// Use Cloudflare adapter for Cloudflare Pages deployment
-		adapter: adapter({
-			// options
-			routes: {
-				include: ['/*'],
-				exclude: ['<all>']
-			}
-		})
+		adapter: adapter()
 	}
 };
 
