@@ -1,6 +1,4 @@
-import preprocess from 'svelte-preprocess'; // 预处理器
 import adapter from '@sveltejs/adapter-static'; // 静态适配器
-import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
